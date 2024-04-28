@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+	<head>
+		<meta charset="UTF-8">
+		<title>tser</title>
+		<link rel="stylesheet" href="style.css">
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		<script src="https://www.youtube.com/iframe_api"></script>
+		<script src="https://szk31.github.io/pcsl/data.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&display=swap" rel="stylesheet" defer>
+	</head>
+    <body>
+		<div id="header">
+			<div id="cfg_general">
+				<div>動画ID:</div>
+				<div>
+					<input id="ts_vid_id" type="text" minlength="11" maxlength="11" placeholder="dQw4w9WgXcQ">
+				</div>
+				<div>チャンネル:</div> 
+				<div>
+					<div id="cfg_ch_k" class="cfg_ch_op">きらら</div>
+					<div id="cfg_ch_m" class="cfg_ch_op">もも</div>
+					<div id="cfg_ch_y" class="cfg_ch_op">ゆこ</div>
+					<div id="cfg_ch_n" class="cfg_ch_op selected">手動</div>
+				</div>
+			</div>
+			<div id="vid_player" class="">[video goes here]</div>
+			<div id="cfg_in">cfg_in</div>
+			<div id="cfg_out">cfg_out</div>
+		</div>
+		<div id="ts_io">
+			<div>				
+				<div id="input">
+					<div id="ts_input_template" class="hidden">
+						<div class="ts_input_delete"></div>
+						<textarea class="ts_input_time" placeholder="0:00:00" maxlength="7"></textarea>
+						<textarea class="ts_input_cntx" placeholder="Songname / point" maxlength="50"></textarea>
+					</div>
+				</div>
+				<div id="ts_input_new_row"></div>
+			</div>
+			<div id="output_container">
+				<div id="output">Yee</div>
+				<div id="ts_output_copy"></div>
+			</div>
+		</div>
+		<div id="autoback" class="hidden auto"></div>
+		<div id="autosearch" class="hidden auto"></div>
+		<div id="void"></div>
+    </body>
+</html>

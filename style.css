@@ -1,0 +1,298 @@
+:root {
+    --radio-back: #c8c3ca;
+    --radio-border: #130027;
+    --radio-outline: #7c9292;
+}
+
+.hidden {
+    display : none !important;
+}
+
+#void {
+    height: 50vh;
+}
+
+body {
+    background-color: #222;
+    color: #bbb;
+    box-sizing: border-box;
+	font-family: 'M PLUS 1p', sans-serif;
+    margin: 0;
+}
+
+*::-webkit-scrollbar {
+    display : none;
+}
+
+#header {
+    margin: 8vh auto 0;
+    justify-content: center;
+
+    font-size: 15px;
+    width: fit-content;
+}
+
+@media screen and (max-width: 1000px) {
+    #output_container {
+        justify-content: center;
+    }
+
+    #output {
+        max-width: 80vw;
+        margin: 0 auto;
+        min-height: 50px;
+    }
+
+    #ts_output_copy {
+        right: 8% !important;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #header {
+        display: grid;
+    }
+
+    #cfg_general {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #cfg_in {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    #cfg_out {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    #vid_player {
+        grid-column: 2;
+        grid-row: 1 / span 3;
+    }
+
+    #ts_io {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+}
+
+#cfg_general {
+    display: grid;
+    grid-template-columns: auto auto;
+    height: fit-content;
+    margin: auto 0;
+}
+
+#cfg_general>div {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+#cfg_general>div:nth-child(2n+1) {
+    justify-content: right;
+}
+
+input[type=text] {
+    border: none;
+}
+
+input[type=text]::placeholder {
+    color: #999;
+}
+
+#vid_id_cont {
+    display: flex;
+    justify-content: center;
+}
+
+#ts_vid_id {
+    border: 2px solid black;
+    outline: 2px solid white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    width: 110px;
+    height: fit-content;
+    margin: 0 8px;
+}
+
+#ts_vid_id:focus {
+    outline: 2px solid lightseagreen;
+    border: 2px solid green;
+}
+
+#ts_vid_id:invalid {
+    border: 2px solid darkred;
+}
+
+#ts_vid_id:invalid:not(:focus) {
+    outline: 2px solid red;
+}
+
+.cfg_ch_op {
+    margin: 0 2px;
+    padding: 0 2px;
+    width: 50px;
+
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.cfg_ch_op.selected {
+    background-color: #bbb;
+    color: #000;
+}
+
+#vid_player {
+    width: 640px;
+    height: 360px;
+    background-color: #fff3;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#input {
+    margin: 10px 0;
+}
+
+#input>div {
+    margin: auto auto;
+}
+
+.input_item {
+    display: grid;
+    grid-template-columns: min-content min-content min-content;
+    width: min-content;
+}
+
+.ts_input_delete {
+    content: url(icon/cbx_cross.png);
+    width: 20px;
+    height: 20px;
+    margin: auto 4px;
+}
+
+textarea {
+	font-family: 'M PLUS 1p', sans-serif;
+    border: none;
+    outline: none;
+    background-color: #444;
+    color: #eee;
+}
+
+textarea::placeholder {
+    color: #777;
+}
+
+.ts_input_time,
+.ts_input_cntx {
+    padding: 4px 8px;
+    margin: 8px 4px;
+    border-radius: 10px;
+    height: 1.1em;
+    line-height: 1.2em;
+    resize: none;
+    font-size: 14px;
+}
+
+.ts_input_time {
+    width: 61px;
+    text-align: right;
+    vertical-align: top;
+}
+
+.ts_input_cntx {
+    min-width: 0;
+    width: calc(45vw - 100px);
+    line-break: anywhere;
+    overflow-y: auto;
+}
+
+.ts_input_cntx.multiple_lines:focus {
+    height: 2.4em;
+}
+
+#autoback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0001;
+}
+
+#autosearch {
+    position: absolute;
+    background-color: #2227;
+}
+
+.auto_name {
+    margin: 6px 0;
+    padding: 2px 6px;
+    background-color: #444;
+    color: #bbb;
+    border-radius: 10px;
+    border: 2px solid #777;
+    height: 26px;
+    overflow: hidden;
+    white-space: nowrap;
+
+    display: flex;
+    align-items: center;
+}
+
+#ts_input_new_row {
+    content: url(icon/cbx_plus.png);
+    width: 30px;
+    height: 30px;
+    margin: 10px auto;
+}
+
+#output_container {
+    display: flex;
+}
+
+#output {
+    margin: 10px;
+    padding: 5px 10px;
+    background-color: #333;
+    border: 2px solid #888;
+    border-radius: 10px;
+    color: #ddd;
+    width: 100%;
+}
+
+#ts_output_copy {
+    content: url(icon/copy.png);
+    filter: invert();
+    opacity: 0.5;
+    width: 40px;
+    
+    position: absolute;
+    right: 0;
+    margin: 20px;
+}
+
+.radio {
+	margin : 5px;
+	width : 10px;
+	height : 10px;
+	border-radius : 20px;
+	border : 4px solid var(--radio-border);
+	outline : 2px solid var(--radio-outline);
+}
+
+.radio.selected {
+	background-color : var(--radio-back);
+}
+
+.radio:not(.selected) {
+	background-color : var(--radio-border);
+}
